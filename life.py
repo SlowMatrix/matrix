@@ -1,15 +1,8 @@
 from class_matrix import *
 
 def life(w, q, im, v, mur):
-    mu = 0
-    for x in mur:
-        mu += x
-    if mu == 3 and im == 0:
-        return 1
-    elif im == 1 and (mu == 2 or mu == 3):
-        return 1
-    else:
-        return 0
+    mu = sum(mur)
+    return mu == 3 and im == 0 or im == 1 and (mu == 2 or mu == 3)
 
 if __name__ == "__main__":
     import time
@@ -27,7 +20,7 @@ if __name__ == "__main__":
     while s:
         for i in range(100):
             main.scan(life, mura=True)
-            main.copy().dif().show(a)
+            main.show(a)
             time.sleep(0.01)
         s = bool(input())
         if s == False:
