@@ -87,6 +87,23 @@ def out(m, x, y):
         return False
     return True
 
+def simple_scan(matrix, funk):
+    """
+        Применит Функцию ко всем элементам матрицы
+        (inFunk то что предаётся в функцию)
+        (mura соседство мурра)
+    """
+    m = list(matrix)
+    _y = len(m)
+    _x = len(m[0])
+    _exit = [[]]
+
+    for y in range(_y):
+        for x in range(_x):
+            c = funk(get(m, x, y))
+            _exit[-1].append(c)
+        _exit.append([])
+    return _exit[0:-1]
 
 def scan(matrix, funk, inFunk=None, mura=False):
     """

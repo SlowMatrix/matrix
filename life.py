@@ -1,11 +1,10 @@
-from class_matrix import *
-
 def life(w, q, im, v, mur):
     mu = sum(mur)
-    return mu == 3 and im == 0 or im == 1 and (mu == 2 or mu == 3)
+    return (mu == 3 and im == 0) or (im == 1 and (mu == 2 or mu == 3))
 
-if __name__ == "__main__":
+def main():
     import time
+    from class_matrix import Matrix
     a = True
     main = Matrix(67, 33)
     main.pattern("random", [0, 1])  
@@ -24,5 +23,8 @@ if __name__ == "__main__":
             time.sleep(0.01)
         s = bool(input())
         if s == False:
-            main.pattern("random", [0, 1])
+            main.pattern("random", [0, 1])  
+            
+if __name__ == "__main__":
+    main()
 
