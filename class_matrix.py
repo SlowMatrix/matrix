@@ -189,7 +189,11 @@ class Matrix():
 
             self.matrix = scan(self.matrix, random, z)
         return self.copy()
-
+    
+    def simple_scan(self, funk):
+        self.matrix = simple_scan(self.matrix, funk)
+        return self.copy()
+    
     def scan(self, funk, inFunk=None, mura=False):
         """
             Применит Функцию ко всем элементам матрицы
